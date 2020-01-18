@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+h1 {
+  text-align: center;
+  fill: #FF9800;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 85px;
+}
+
+path {
+ fill: transparent;
+}
+
+div {
+	text-align: center;
+}
+
+footer {
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	
+}
+
+body {
+	min-height: 100vh;
+	position: relative;
+	text-align: center;
+}

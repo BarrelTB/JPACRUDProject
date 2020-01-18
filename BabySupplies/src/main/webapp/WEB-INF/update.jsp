@@ -5,7 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Update a Current Item!</title>
+<jsp:include page="top.jsp"></jsp:include>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 <form action="Updated.do" method="post">
 	Name:<input type="text" name="name" size="100" value="${item.name}" /><br>
@@ -31,6 +34,9 @@
 	<input type="submit" value="Update" /><br>
 	</form>
 
+<footer>
 <a href="home.do">Home</a>
+</footer>
 </body>
+<jsp:include page="bottom.jsp"></jsp:include>
 </html>

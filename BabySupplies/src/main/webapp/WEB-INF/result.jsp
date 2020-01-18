@@ -6,16 +6,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Showing Item(s)</title>
+<jsp:include page="top.jsp"></jsp:include>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div>
+
 <c:choose>
 	<c:when test="${! empty items}">
-		<ul>
+	<div class="list-group">
 		<c:forEach var="item" items="${items}">
-		<li><a href="ItemById.do?id=${item.id }">${item.name}</a></li>
+		<a href="ItemById.do?id=${item.id }" class="list-group-item">${item.name}</a>
 		</c:forEach>
-		</ul>
+		</div>
 		</c:when>
 		<c:when test="${! empty item}">
 				<ul>
@@ -50,7 +52,9 @@
 				<p>No Item(s) found</p>
 			</c:otherwise>
 </c:choose>
-</div>
+<footer>
 <a href="home.do">Home</a>
+</footer>
 </body>
+<jsp:include page="bottom.jsp"></jsp:include>
 </html>
