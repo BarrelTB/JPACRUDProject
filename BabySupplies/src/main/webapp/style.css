@@ -4,7 +4,7 @@ h1 {
   text-align: center;
   fill: #FF9800;
   font-family: 'Luckiest Guy', cursive;
-  font-size: 85px;
+   font-size: 86px;
 }
 
 path {
@@ -27,4 +27,8 @@ body {
 	min-height: 100vh;
 	position: relative;
 	text-align: center;
+}
+
+.baby-img {
+	height: 50px;
 }

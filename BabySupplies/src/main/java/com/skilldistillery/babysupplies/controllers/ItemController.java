@@ -32,6 +32,11 @@ public class ItemController {
 		model.addAttribute("items", items);
 		return "result";
 	}
+	@RequestMapping(path = "Search.do", method = RequestMethod.GET)
+	public String findItemsByKeyword() {
+		
+		return "search";
+	}
 	
 	@RequestMapping(path = "AllItems.do", method = RequestMethod.GET)
 	public String findAllItems(Model model) {
@@ -44,6 +49,7 @@ public class ItemController {
 	public String findItemById(int id, Model model) {
 		Item item = dao.readItem(id);
 		model.addAttribute("item", item);
+		System.out.println(item);
 		return "result";
 	}
 	
