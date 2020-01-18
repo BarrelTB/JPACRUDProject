@@ -10,6 +10,8 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class ItemTest {
@@ -40,9 +42,21 @@ class ItemTest {
 		item = null;
 	}
 
+	@Disabled
 	@Test
+	@DisplayName("Fail test to test JUnit framework")
 	void test() {
 		fail("Not yet implemented");
+	}
+	
+//	@Disabled
+	@Test
+	@DisplayName("Testing item entity mappings")
+	void test1() {
+		assertEquals("Graco FastAction Fold Jogging Stroller", item.getName());
+		assertEquals("GREAT", item.getQuality().toString());
+		assertEquals(2018, item.getPurchaseYear());
+		assertEquals(100, item.getPrice());
 	}
 
 }

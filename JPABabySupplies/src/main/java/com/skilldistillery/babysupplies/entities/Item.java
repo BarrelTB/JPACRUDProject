@@ -2,6 +2,8 @@ package com.skilldistillery.babysupplies.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,15 +32,17 @@ public class Item {
 	@Column(name="num_available")
 	private int numAvailable;
 	
-	private Enum quality;
+	@Enumerated(EnumType.STRING)
+	private Quality quality;
 	
 	private double price;
 	
 	public Item() {
 		
 	}
+
 	public Item(String name, String description, String manufacturer, String link, String ageRange, int purchaseYear,
-			int numAvailable, double price) {
+			int numAvailable, Quality quality, double price) {
 		super();
 		this.name = name;
 		this.description = description;
@@ -47,9 +51,19 @@ public class Item {
 		this.ageRange = ageRange;
 		this.purchaseYear = purchaseYear;
 		this.numAvailable = numAvailable;
+		this.quality = quality;
 		this.price = price;
 	}
+
+	public Quality getQuality() {
+		return quality;
+	}
 	
+	
+	public void setQuality(Quality quality) {
+		this.quality = quality;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -109,7 +123,7 @@ public class Item {
 	public String toString() {
 		return "Item [id=" + id + ", name=" + name + ", description=" + description + ", manufacturer=" + manufacturer
 				+ ", link=" + link + ", ageRange=" + ageRange + ", purchaseYear=" + purchaseYear + ", numAvailable="
-				+ numAvailable + ", price=" + price + "]";
+				+ numAvailable + ", quality=" + quality + ", price=" + price + "]";
 	}
 	
 	
